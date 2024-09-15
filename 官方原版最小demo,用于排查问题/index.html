@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./css/hiprint.css" rel="stylesheet" />
+    <link href="./css/print-lock.css" rel="stylesheet" />
+    <link media="print" href="./css/print-lock.css" rel="stylesheet" />
+    
+    <script src="./plugins/jq-3.31.js"></script>
+    <script src="./plugins/qrcode.js"></script>
+    <script src="./plugins/socket.io.js"></script>
+    <script src="./hiprint.bundle.js"></script>
+
+</head>
+<body>
+    <script ></script>
+    <button onClick="print2()">打印测试</button>
+
+    <script>
+        var print2 = function () {
+            //初始化打印插件
+            hiprint.init();
+            // 打印模板
+            var hiprintTemplate = new hiprint.PrintTemplate({
+                template: {"panels":[{"index":0,"paperType":"A4","height":297,"width":210,"paperHeader":43.5,"paperFooter":801,"printElements":[{"options":{"left":244.5,"top":178.5,"height":9.75,"width":120,"field":"name"},"printElementType":{"type":"text"}}],"paperNumberLeft":565,"paperNumberTop":819}]}
+            });
+            // 打印数据
+            var printData = {name: 'test123'}
+            hiprintTemplate.print2(printData);
+        }
+    </script>
+</body>
+</html>

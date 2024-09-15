@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="hiprint,一个可以跨平台windows,mac,linux运行的js打印插件,打印自动分页">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>hiprint.io</title>
+    <link href="http://hiprint.io/Content/hinnn.css" rel="stylesheet" />
+    <!-- Bootstrap -->
+    <link href="http://hiprint.io/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="http://hiprint.io/Content/document.css" rel="stylesheet" />
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    <link href="http://hiprint.io/Content/hinnn.css" rel="stylesheet" />
+    <link href="http://hiprint.io/Content/home.css" rel="stylesheet" />
+    <link href="http://hiprint.io/Content/Font-Awesome-3.2.1/css/font-awesome-ie7.min.css" rel="stylesheet" />
+    <link href="http://hiprint.io/Content/Font-Awesome-3.2.1/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="http://hiprint.io/Content/hiprint/css/hiprint.css?v=2024" rel="stylesheet" />
+    <link href="http://hiprint.io/Content/hiprint/css/print-lock.css" rel="stylesheet" />
+    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script> -->
+     <script src="http://hiprint.io/Content/jquery.js"></script>
+
+    <script data-ad-client="ca-pub-2624961100945767" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand hidden-sm" href="/">Hiprint</a>
+            </div>
+            <div class="navbar-collapse collapse" role="navigation">
+                <ul class="nav navbar-nav">
+                    
+                    <li><a href="/demo">Hiprint2中文文档</a></li>
+                    <li><a href="/demo/list">Hiprint在线实例</a></li>
+                    <li><a href="/demo/list/htmlTopdf">Hiprint转PDF</a></li>
+                    <li><a href="/updatelogs">更新日志</a></li>
+                    
+                    
+                    <li><a href="/design">模板设计</a></li>
+                    <li><a href="/download">下载 v2.5.3</a></li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right hidden-sm">
+                    <li><a href="javascript:void(0)">q群 867788017(满),561844693 vip群 866855396</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper" style="margin-top:50px;">
+        
+
+<link href="http://hiprint.io/Content/hiprint/css/hiprint.css" rel="stylesheet" />
+<link href="http://hiprint.io/Content/hiprint/css/print-lock.css" rel="stylesheet" />
+<link media="print" href="http://hiprint.io/Content/hiprint/css/print-lock.css" rel="stylesheet" />
+<layout class="layout hinnn-layout hinnn-layout-has-sider height-100-per" style="background:#fff;">
+    <content class="hinnn-layout-content" style="border-left:1px solid #e8e8e8;">
+        <div class="container height-100-per print-content">
+
+            <div class="row">
+
+                <div class="col-sm-12">
+
+                    <div class="hinnn-docs-section">
+
+
+                        <h1 class="page-header">直接打印</h1>
+                        <p class="simpaleExplain">直接打印需额外引入socket.io.js 需安装软件</p>
+
+
+
+                    </div>
+
+                    <a class="btn hiprint-toolbar-item " style="color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;" id="print2">直接打印</a>
+                    <span id="printerlist"></span>
+                </div>
+                <div style="margin:10px 0;">
+   <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+<!-- 横幅广告 -->
+<!-- <ins class="adsbygoogle"
+     style="display:inline-block;width:970px;height:112px"
+     data-ad-client="ca-pub-2624961100945767"
+     data-ad-slot="3416480539"></ins> -->
+<script>
+     // (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+            </div>
+
+        </div>
+
+    </content>
+    <sider class="hinnn-layout-sider" style="">
+        <div class="container-fluid height-100-per" style="width:250px;">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="PrintElementOptionSetting" style="margin-top:10px;"></div>
+                </div>
+            </div>
+        </div>
+
+
+    </sider>
+</layout>
+
+
+
+
+
+    </div>
+
+
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script> -->
+    <script src="http://hiprint.io/Scripts/bootstrap.min.js"></script>
+    <script src="http://hiprint.io/Content/jquery.nicescroll-3.7.4/jquery.nicescroll.min.js"></script>
+    <script src="http://hiprint.io/Content/hiprint/hiprint.bundle.js?v2023"></script>
+
+    
+
+    <script src="http://hiprint.io/Content/hiprint/polyfill.min.js"></script>
+<script src="http://hiprint.io/Content/hiprint/plugins/jquery.hiwprint.js"></script>
+<script src="http://hiprint.io/Content/hiprint/plugins/JsBarcode.all.min.js"></script>
+<script src="http://hiprint.io/Content/hiprint/plugins/qrcode.js"></script>
+<script src="http://hiprint.io/Content/hiprint/plugins/jquery.minicolors.min.js"></script>
+<script src="http://hiprint.io/Content/hiprint/plugins/jspdf/canvas2image.js"></script>
+<script src="http://hiprint.io/Content/hiprint/plugins/jspdf/canvg.min.js"></script>
+<script src="http://hiprint.io/Content/hiprint/plugins/jspdf/html2canvas.min.js"></script>
+<script src="http://hiprint.io/Content/hiprint/plugins/jspdf/jspdf.min.js"></script>
+<script src="http://hiprint.io/Content/hiprint/socket.io.js"></script>
+<script src="http://hiprint.io/Content/hiprint/hiprint.config.js"></script>
+
+    <script>
+
+
+        $(document).ready(function () {
+            
+            //初始化打印插件
+            hiprint.init();
+            
+
+
+            var hiprintTemplate2 = new hiprint.PrintTemplate({"panels":[{"index":0,"height":297,"width":210,"paperHeader":49.5,"paperFooter":780,"printElements":[{"options":{"left":175.5,"top":10.5,"height":27,"width":259,"title":"HiPrint自定义模块打印插件","fontSize":19,"fontWeight":"600","textAlign":"center","lineHeight":26},"printElementType":{"title":"自定义文本","type":"text"}},{"options":{"left":60,"top":27,"height":13,"width":52,"title":"页眉线","textAlign":"center"},"printElementType":{"title":"自定义文本","type":"text"}},{"options":{"left":25.5,"top":57,"height":705,"width":9,"fixed":true,"borderStyle":"dotted"},"printElementType":{"type":"vline"}},{"options":{"left":60,"top":61.5,"height":48,"width":87,"src":"/Content/assets/hi.png"},"printElementType":{"title":"图片","type":"image"}},{"options":{"left":153,"top":64.5,"height":39,"width":276,"title":"二维码以及条形码均采用svg格式打印。不同打印机打印不会造成失真。图片打印：不同DPI打印可能会导致失真，","fontFamily":"微软雅黑","textAlign":"center","lineHeight":18},"printElementType":{"title":"自定义文本","type":"text"}},{"options":{"left":457.5,"top":79.5,"height":13,"width":120,"title":"姓名","field":"name","testData":"古力娜扎","color":"#f00808","textDecoration":"underline","textAlign":"center"},"printElementType":{"title":"文本","type":"text"}},{"options":{"left":499.5,"top":120,"height":43,"width":51,"title":"123456789","textType":"qrcode"},"printElementType":{"title":"自定义文本","type":"text"}},{"options":{"left":285,"top":130.5,"height":34,"width":175,"testData":"123456789","field":"barcode","title":"123456789","fontFamily":"微软雅黑","textAlign":"center","textType":"barcode"},"printElementType":{"title":"自定义文本","type":"text"}},{"options":{"left":60,"top":132,"height":19,"width":213,"title":"所有打印元素都可已拖拽的方式来改变元素大小","fontFamily":"微软雅黑","textAlign":"center","lineHeight":18},"printElementType":{"title":"自定义文本","type":"text"}},{"options":{"left":153,"top":189,"height":13,"width":238,"title":"单击元素，右侧可自定义元素属性","textAlign":"center","fontFamily":"微软雅黑"},"printElementType":{"title":"自定义文本","type":"text"}},{"options":{"left":60,"top":190.5,"height":13,"width":51,"title":"横线","textAlign":"center"},"printElementType":{"title":"自定义文本","type":"text"}},{"options":{"left":415.5,"top":190.5,"height":13,"width":164,"title":"可以配置各属性的默认值","textAlign":"center","fontFamily":"微软雅黑"},"printElementType":{"title":"自定义文本","type":"text"}},{"options":{"left":60,"top":214.5,"height":10,"width":475.5},"printElementType":{"title":"横线","type":"hline"}},{"options":{"left":235.5,"top":220.5,"height":32,"width":342,"title":"自定义表格：用户可左键选中表头，右键查看可操作项，操作类似Excel，双击表头单元格可进行编辑。内容：title#field","fontFamily":"微软雅黑","textAlign":"center","lineHeight":15},"printElementType":{"title":"自定义文本","type":"text"}},{"options":{"left":156,"top":265.5,"height":13,"width":94,"title":"表头列大小可拖动","fontFamily":"微软雅黑","textAlign":"center"},"printElementType":{"title":"自定义文本","type":"text"}},{"options":{"left":60,"top":265.5,"height":13,"width":90,"title":"红色区域可拖动","fontFamily":"微软雅黑","textAlign":"center"},"printElementType":{"title":"自定义文本","type":"text"}},{"options":{"left":60,"top":285,"height":44,"width":511.5,"field":"table","columns":[[{"width":85.25,"colspan":1,"rowspan":1,"checked":true},{"width":85.25,"colspan":1,"rowspan":1,"checked":true},{"title":"姓名","field":"name","width":85.25,"align":"center","colspan":1,"rowspan":1,"checked":true,"columnId":"name"},{"width":85.25,"colspan":1,"rowspan":1,"checked":true},{"width":85.25,"colspan":1,"rowspan":1,"checked":true},{"width":85.25,"colspan":1,"rowspan":1,"checked":true}]]},"printElementType":{"title":"表格","type":"tableCustom"}},{"options":{"left":21,"top":346.5,"height":61.5,"width":15,"title":"装订线","lineHeight":18,"fixed":true,"contentPaddingTop":3.75,"backgroundColor":"#ffffff"},"printElementType":{"type":"text"}},{"options":{"left":225,"top":349.5,"height":13,"width":346.5,"title":"自定义模块：主要为开发人员设计，能够快速，简单，实现自己功能","textAlign":"center"},"printElementType":{"title":"自定义文本","type":"text"}},{"options":{"left":60,"top":370.5,"height":18,"width":79,"title":"配置项表格","textAlign":"center"},"printElementType":{"title":"自定义文本","type":"text"}},{"options":{"left":225,"top":385.5,"height":38,"width":346.5,"title":"配置模块：主要为客户使用，开发人员可以配置属性，字段，标题等，客户直接使用，配置模块请参考实例2","fontFamily":"微软雅黑","lineHeight":15,"textAlign":"center","color":"#d93838"},"printElementType":{"title":"自定义文本","type":"text"}},{"options":{"left":60,"top":487.5,"height":13,"width":123,"title":"长文本会自动分页","textAlign":"center"},"printElementType":{"title":"自定义文本","type":"text"}},{"options":{"left":60,"top":507,"height":40,"width":511.5,"field":"longText"},"printElementType":{"title":"长文","type":"longText"}},{"options":{"left":475.5,"top":565.5,"height":100,"width":100},"printElementType":{"title":"矩形","type":"rect"}},{"options":{"left":174,"top":568.5,"height":13,"width":90,"title":"竖线","textAlign":"center"},"printElementType":{"title":"自定义文本","type":"text"}},{"options":{"left":60,"top":574.5,"height":100,"width":10},"printElementType":{"title":"竖线","type":"vline"}},{"options":{"left":210,"top":604.5,"height":13,"width":120,"title":"横线","textAlign":"center"},"printElementType":{"title":"自定义文本","type":"text"}},{"options":{"left":130.5,"top":625.5,"height":10,"width":277},"printElementType":{"title":"横线","type":"hline"}},{"options":{"left":364.5,"top":649.5,"height":13,"width":101,"title":"矩形","textAlign":"center"},"printElementType":{"title":"自定义文本","type":"text"}},{"options":{"left":525,"top":784.5,"height":13,"width":63,"title":"页尾线","textAlign":"center"},"printElementType":{"title":"自定义文本","type":"text"}},{"options":{"left":12,"top":786,"height":49,"width":49},"printElementType":{"title":"html","type":"html"}},{"options":{"left":75,"top":790.5,"height":13,"width":137,"title":"红色原型是自动定义的Html","textAlign":"center"},"printElementType":{"title":"自定义文本","type":"text"}},{"options":{"left":334.5,"top":810,"height":13,"width":205,"title":"页眉线已上。页尾下以下每页都会重复打印","textAlign":"center"},"printElementType":{"title":"自定义文本","type":"text"}}],"paperNumberLeft":565.5,"paperNumberTop":819}]});
+               
+    
+
+            $('#print2').click(function () {
+                hiprintTemplate2.print({
+    name: '黄磊',
+    password: '12346',
+barcode:'202200001',});
+            });
+            
+
+
+           
+        });
+
+        var createPrintHtml = function (printers) {
+            var ul = $('<select></select>');
+            $.each(printers, function (index, printer) {
+                ul.append('<option value="' + printer.name + '" ' + (printer.isDefault ? 'selected' : '') + '>' + printer.name + '</option>');
+            })
+            return ul;
+        }
+
+    </script>
+
+
+    <script src="http://hiprint.io/Content/assets/tctip-1.0.1.min.js"></script>
+    <script> 
+        $(document).ready(function () {
+            new tctip({
+                top: '20%',
+                button: {
+                    id: 9,
+                    type: 'dashang',
+                },
+                list: [
+                   
+                      {
+                          type: 'wechat',
+                          qrImg: 'http://hiprint.io/Content/assets/weixnpay.jpg'
+                    }
+                      
+                ]
+            }).init()
+
+        });
+    </script>
+</body>
+</html>
